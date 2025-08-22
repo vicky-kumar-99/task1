@@ -1,7 +1,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000'
+const API_BASE = import.meta.env.VITE_API_BASE || "https://task1-backend.onrender.com";
 
 async function api(path, opts) {
   const res = await fetch(`${API_BASE}${path}`, { headers: { 'Content-Type':'application/json' }, ...opts })
