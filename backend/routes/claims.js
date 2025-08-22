@@ -22,7 +22,7 @@ router.post('/:userId', async (req, res) => {
   }
 });
 
-// Get claim history (optional filter by userId)
+
 router.get('/', async (req, res) => {
   try {
     const { userId } = req.query;

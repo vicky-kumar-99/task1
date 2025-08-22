@@ -24,7 +24,6 @@ export default function App() {
     fetchUsers()
     fetchLeaderboard()
 
-    // Live updates via SSE (fallback to polling if blocked)
     try {
       const ev = new EventSource(`${API_BASE}/api/events`)
       ev.onmessage = (e) => {
@@ -55,7 +54,7 @@ export default function App() {
     const res = await api(`/api/claim/${selected}`, { method: 'POST' })
     setLastResult({ name: res.user.name, points: res.points })
     fetchUsers()
-    // leaderboard will auto-refresh via SSE
+    
   }
 
   return (

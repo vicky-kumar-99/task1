@@ -5,10 +5,10 @@ import User from './models/User.js';
 
 dotenv.config();
 
-const defaults = ['Rahul','Kamal','Sanak','Aisha','Neha','Vikram','Pooja','Aman','Sneha','Rohit'];
+const defaults = [];
 
 async function run() {
-  if (!process.env.ATLASDB_URL) throw new Error('MONGO_URI missing');
+  if (!process.env.ATLASDB_URL) throw new Error('ATLASDB_URL missing');
   await mongoose.connect(process.env.ATLASDB_URL);
   const count = await User.countDocuments();
   if (count === 0) {
